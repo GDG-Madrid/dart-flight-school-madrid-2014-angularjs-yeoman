@@ -1,0 +1,23 @@
+
+<div>
+    <span ng-repeat="quality in audio.qualities | orderBy:'preset'"
+          ng-switch on="quality.preset">
+
+        <span ng-switch-when="LOW" class="label label-warning">
+            <a href="{{ quality.filePath }}"> {{ quality.preset}} </a>
+        </span>
+
+        <span ng-switch-when="HIGH" class="label label-info">
+            <a href="{{ quality.filePath }}"> {{ quality.preset}} </a>
+        </span>
+
+        <span ng-switch-when="ORIGINAL" class="label label-success">
+            <a href="{{ quality.filePath }}"> {{ quality.preset}} </a>
+        </span>
+
+        <span ng-switch-default class="label label-default">
+            <a href="{{ quality.filePath }}"> {{ quality.preset}} </a>
+        </span>
+    </span>
+    <b>{{audio.title}}</b>, <i>{{audio.dateOfEmission}}</i>
+</div>

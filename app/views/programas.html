@@ -1,0 +1,26 @@
+<h1>This is the programas view.</h1>
+
+<h2>{{ cadenaDetail.title }}</h2>
+<hr/>
+
+<ul class="media-list">
+    <li class="media" ng-repeat="programa in programas.page.items">
+        <a href="/#/audios/{{ cadenaDetail.id }}/{{ programa.id }}">{{programa.name}}</a>
+    </li>
+</ul>
+
+<ul class="pagination">
+    <li ng-repeat="page in pages"
+        ng-attr-class="{{ page == programas.page.number && 'active' || 'inactive' }}">
+        <a ng-click="loadProgramPage( page )">
+            {{ page }}
+            <span ng-if="page == programas.page.number"
+                  class="sr-only"> (current)</span>
+        </a>
+    </li>
+</ul>
+
+
+<div class="footer">
+  <p>♥ from the Yeoman team</p>
+</div>

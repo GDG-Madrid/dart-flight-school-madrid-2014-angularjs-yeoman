@@ -1,0 +1,37 @@
+<h1>This is the audios view.</h1>
+
+<h2>
+    {{ cadenaDetail.title }} -
+    {{ programaDetail.name }}
+</h2>
+<hr/>
+
+
+<ul class="media-list">
+    <li class="media" ng-repeat="audio in audios.page.items">
+
+        <rne-audios></rne-audios>
+
+<!--        <div ng-repeat="quality in audio.qualities">
+            <a href="{{ quality.filePath }}"> {{ quality.preset}} </a>
+        </div>
+            {{audio.title}}-->
+
+    </li>
+</ul>
+
+
+<ul class="pagination">
+    <li ng-repeat="page in pages"
+        ng-attr-class="{{ page == audios.page.number && 'active' || 'inactive' }}">
+        <a ng-click="loadAudioPage( page )">
+            {{ page }}
+            <span ng-if="page == audios.page.number"
+                  class="sr-only"> (current)</span>
+        </a>
+    </li>
+</ul>
+
+<div class="footer">
+  <p>♥ from the Yeoman team</p>
+</div>
